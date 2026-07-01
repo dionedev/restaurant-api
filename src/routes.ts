@@ -1,9 +1,15 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+import { CreateUserController } from "./controller/user/CreateUserController";
+import { validadeSchema } from "./middlewares/validadeSchema";
+import { createUserSchema } from "./schemas/user/createUserSchema";
 
 const router = Router();
+const createUserController = new CreateUserController();
 
-router.get("/users", (req: Request, res: Response) => {
-  res.json({ message: "Ok, funciona" });
-});
+router.post(
+  "/users",
+  validadeSchema(createUserSchema),
+  createUserController.handle,
+);
 
 export { router };
