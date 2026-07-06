@@ -6,10 +6,10 @@ class CreateUserController {
     const { name, email, password } = req.body;
     const createUserService = new CreateUserService();
 
-    const user = await createUserService.execute();
-    console.log(user);
+    const user = await createUserService.execute({ name, email, password });
+    console.log("CONTROLLER: ", user);
 
-    res.status(201).json({ name, email, password });
+    res.status(201).json({ user });
   }
 }
 
