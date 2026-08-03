@@ -7,6 +7,7 @@
       "ES2023"
     ], // Bibliotecas de tipos incluídas
     "moduleResolution": "node", // Estratégia de resolução de módulos (Node.js)
+    "ignoreDeprecations": "6.0",
     // Diretórios
     "outDir": "./dist", // Pasta de saída dos arquivos compilados
     "rootDir": "./src", // Pasta raiz dos arquivos fonte
